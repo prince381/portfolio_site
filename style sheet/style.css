@@ -1,0 +1,1045 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    box-sizing: border-box;
+}
+
+:root {
+    --lobster: 'Lobster', cursive;
+    --fjalla: 'Fjalla One', sans-serif;
+    --josefin: 'Josefin Sans', sans-serif;
+    --anton: 'Anton', sans-serif;
+    --narrow: 'PT Sans Narrow', sans-serif;
+    }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+
+/*===================== Header Section =========================*/
+
+header {
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.9),transparent);
+    z-index: 1;
+    height: 12vh;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-bar a {
+    text-decoration: none;
+}
+
+.logo a h4 {
+    letter-spacing: 5px;
+    padding: 5px;
+    position: relative;
+}
+
+.logo .first-letter {
+    font-size: 40px;
+    color: orangered;
+    font-family: var(--lobster);
+}
+
+.logo .middle-letters {
+    font-size: 20px;
+    color: cyan;
+    font-family: var(--lobster);
+}
+
+.logo .last-letters {
+    font-size: 40px;
+    color: seashell;
+    font-family: var(--lobster);
+}
+
+.logo a h4::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: seashell;
+    transform: scaleX(0);
+    transition: all .5s ease-in;
+}
+
+.logo a h4:hover::after,
+.logo a h4:hover {
+    transform: scaleX(1);
+}
+
+.nav-bar ul {
+    display:flex;
+    list-style: none;
+}
+
+.nav-bar .nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links li a {
+    color: seashell;
+    text-transform: uppercase;
+    font-family: var(--anton);
+    transition: all .5s ease-in;
+}
+
+.nav-links li a:hover {
+    color: orangered;
+}
+
+@keyframes slide-in {
+    from {
+
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.menu-bar div {
+    width: 25px;
+    height: 2px;
+    background-color: cyan;
+    margin: 5px;
+    transition: all .3s ease-in;
+}
+
+.menu-bar {
+    display: none;
+    cursor: pointer;
+}
+/*===================== Header Section Ends =========================*/
+
+
+
+
+
+
+
+
+/*=================== Hero Section =============================*/
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: auto;
+    text-align: center;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.5)),
+    url(../images/pexels-photo-572056.jpeg) center no-repeat fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome {
+    font-family: var(--lobster);
+    font-size: 50px;
+    color: seashell;
+    letter-spacing: 5px;
+    transform: translateX(-100rem);
+    animation: slide-in 2s linear forwards;
+}
+
+.welcome::first-letter {
+    font-size: 90px;
+}
+
+.horizontal {
+    width: 100px;
+    height: 3px;
+    background-color: orangered;
+}
+
+.ho1 {
+    transform: scale(0);
+    transform-origin: right;
+    animation: appear 2s linear forwards;
+}
+
+.ho2 {
+    transform: scale(0);
+    transform-origin: left;
+    animation: appear 2s linear forwards;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.myname {
+    font-family: var(--fjalla);
+    padding: 0 15px;
+    color: seashell;
+    letter-spacing: 3px;
+    transform: scale(0);
+    animation: appear 2s ease-in-out forwards;
+}
+
+.asterisk {
+    width: 50px;
+    color: cyan;
+    position: relative;
+    top: 5px;
+    transform: scale(0);
+    animation: appear 2s ease-in-out forwards;
+}
+
+.container p.text {
+    color: seashell;
+    font-family: var(--josefin);
+    font-size: 20px;
+    margin: 20px auto 80px auto;
+    width: 80%;
+    transform: translateX(100rem);
+    animation: slide-in 2s linear forwards;
+}
+
+.hero a.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Helvetica, sans-serif;
+    width: 150px;
+    height: 40px;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 10px;
+    color: cyan;
+    transition:
+    background-color .5s ease-in,
+    color .5s ease-in;
+    opacity: 0;
+    animation: showup 5s linear forwards;
+}
+
+@keyframes showup {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.hero a.btn:hover {
+    background-color: seashell;
+    color: orangered;
+}
+
+.fas.fa-angle-double-down {
+    font-size: 40px;
+    position: relative;
+    top: 130px;
+    color: orangered;
+    transition: color .5s linear;
+}
+
+.fas.fas.fa-angle-double-down:hover {
+    color: cyan;
+}
+
+/*===================== Hero Section Ends =========================*/
+
+
+
+
+
+
+/*=================== About Section Begins ===========================*/
+
+section#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 300px;
+}
+
+#about p.header-text {
+    font-family: var(--josefin);
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#about img {
+    border: 1px solid cyan;
+    border-radius: 100%;
+    margin-bottom: 30px;
+}
+
+p.about-me-text {
+    font-family: var(--narrow);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+p.hobby-header {
+    font-family: var(--josefin);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.hobby-box {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 5px 7px 2px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+.hobby .fas {
+    font-size: 70px;
+    color: orangered;
+    margin-bottom: 10px;
+}
+
+.hobby p {
+    font-family: var(--narrow);
+    font-size: 20px;
+}
+
+
+/*=================== About Section Ends ===========================*/
+
+
+
+
+
+
+/*========================== Passion Section Begins ======================*/
+
+section#passion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#passion p.header-text {
+    font-family: var(--josefin);
+    font-size: 30px;
+    margin-bottom: 50px;
+}
+
+#passion .capabilities {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.capabilities div {
+  padding: 0 30px;
+  text-align: center;
+}
+
+.capabilities div p {
+  font-size: 16px;
+  font-family: var(--narrow);
+  padding: 15px 0;
+}
+
+.capabilities h3 {
+  font-family: var(--josefin);
+  margin-top: 20px;
+}
+
+/*============================= Passion Section Ends =======================*/
+
+
+
+
+
+
+/*============================= Experience Section Begins ====================*/
+
+section#experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 300px;
+}
+
+#experience p.header-text {
+    font-family: var(--josefin);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#experience .section-intro {
+  font-family: var(--narrow);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.tech-text {
+  font-size: 18px;
+  font-family: var(--josefin);
+  margin-bottom: 15px;
+}
+
+#experience .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.technologies .row {
+  display: flex;
+  align-items: center;
+}
+
+.technologies .row img {
+  margin: 20px 20px;
+  width: 80px;
+  height: 80px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 7px rgba(0, 0, 0, 0.3),
+  1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*========================== Experience Section Ends =======================*/
+
+
+
+
+
+
+
+/*============================== Resume ============================*/
+section.my-resume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 300px;
+    background: linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(0,0,0,0.5)),
+    url(../images/photo-.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+
+.my-resume h3 {
+  font-size: 30px;
+  font-family: var(--josefin);
+  margin-bottom: 30px;
+  color: seashell;
+  font-weight: lighter;
+}
+
+.my-resume a.btn-2 {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  width: 150px;
+  height: 40px;
+  padding: 15px;
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: cyan;
+  transition: background-color 1s ease-out;
+}
+
+.my-resume a.btn-2:hover {
+  background-color: cyan;
+  color: rgb(0,0,0);
+}
+
+/*============================== Resume ============================*/
+
+
+
+
+/*============================= Projects Section Begins ======================*/
+section#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 200px;
+}
+
+#projects p.header-text {
+    font-family: var(--josefin);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+#projects .container p:nth-child(2) {
+  font-family: var(--josefin);
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+#projects .projects-grid .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.projects-grid .row:first-child {
+  margin-bottom: 50px;
+}
+
+.projects-grid .card {
+  width: 400px;
+  height: 300px;
+  margin: 0 30px;
+  box-shadow: 2px 5px 7px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.card-content img {
+  height: 50%;
+  width: 100%;
+}
+
+.card-content h3, .card-content p {
+  text-align: left;
+  padding: 0 15px;
+}
+
+.card-content a {
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-content a {
+  text-decoration: none;
+  color: orangered;
+  position: relative;
+}
+
+.card-content a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: orangered;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform .5s ease-in;
+}
+
+.card-content a:hover::after {
+  transform: scale(1);
+}
+
+.card-content a fas {
+  color: orangered;
+}
+
+.card .card-title {
+  font-family: var(--fjalla);
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.card .card-info {
+  font-family: var(--narrow);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.projects-grid .row:last-child .card:last-child .card-info {
+  margin-bottom: 30px;
+}
+
+
+/*====================== Projects Section Ends =========================*/
+
+
+/*===================== Say Hello ============================*/
+
+section#email-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 300px;
+    background-color: whitesmoke;
+}
+
+#email-me .fas {
+  font-size: 80px;
+  color: cyan;
+  margin-bottom: 30px;
+}
+
+#email-me h3 {
+  font-family: var(--josefin);
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#email-me p {
+  font-family: sans-serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: lighter;
+
+}
+
+#email-me a {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: 1px solid orangered;
+  width: 30px;
+  height: 100px;
+  padding: 10px;
+  background-color: orangered;
+  border-radius: 7px;
+  transition: all .5s ease-in;
+}
+
+#email-me a:hover {
+  background-color: cyan;
+  border: 1px solid cyan;
+  color: black;
+}
+
+
+/*===================== Hello section ends ======================*/
+
+
+
+
+/*======================== Footer Begins =================*/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 60px 300px;
+    background-color: rgba(0,0,0,.9);
+}
+
+footer p {
+  font-size: 20px;
+  font-family: var(--josefin);
+  color: whitesmoke;
+}
+
+footer .fab {
+  color: whitesmoke;
+  font-size: 30px;
+  margin: 0 10px;
+  background-color: rgba(0,0,0,.6);
+  padding: 8px;
+  transition: all .5s ease-in;
+}
+
+footer .fab:hover {
+  background-color: cyan;
+  transform: scale(1.2);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.social-media-icons {
+  margin-bottom: 30px;
+}
+
+/*========================= Footer Ends ===========================*/
+
+
+/*========================== Media Queries ============================*/
+@media screen and (max-width:768px) {
+
+  /*----------- NAVIGATION --------------*/
+   .menu-bar {
+        display:block;
+        margin: 0 15px;
+    }
+
+    .menu-bar:hover div {
+        background-color: orangered;
+    }
+
+    header {
+        background: rgba(0,0,0,0.9);
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 12vh;
+        height: 100vh;
+        background: rgba(0,0,0,0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform .5s ease-in;
+    }
+
+    .nav-links li {
+        margin: 20% 0;
+        list-style: none;
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .nav-links li:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+        animation-delay: 0.8s;
+    }
+    .nav-links li:nth-child(4) {
+        animation-delay: 1.2s;
+    }
+    .nav-links li:nth-child(5) {
+        animation-delay: 1.6s;
+    }
+    /*----------- NAVIGATION --------------*/
+
+
+    /*----------- HERO --------------*/
+    .welcome {
+        font-size: 30px;
+    }
+
+    .welcome::first-letter {
+        font-size: 70px;
+    }
+    .myname {
+        padding: 0 10px;
+        font-size: 16px;
+    }
+    .container p.text {
+        font-size: 17px;
+    }
+
+    .hero a.btn {
+      width: 100px;
+      height: 20px;
+    }
+
+    .fas.fa-angle-double-down {
+      font-size: 30px;
+    }
+    /*----------- HERO --------------*/
+
+
+    /*----------- ABOUT --------------*/
+    section#about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 50px 100px;
+    }
+
+    .my-photo {
+      width: 150px;
+      height: 150px;
+    }
+
+    #about p.header-text {
+        font-size: 20px;
+    }
+
+    #about p.about-me-text {
+        font-size: 15px;
+    }
+
+    .hobby-box {
+        width: 100%;
+        height: 140px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .hobby .fas {
+        font-size: 30px;
+        color: orangered;
+        margin-bottom: 7px;
+    }
+
+    .hobby p {
+        font-family: var(--narrow);
+        font-size: 16px;
+    }
+    /*----------- ABOUT --------------*/
+
+
+    /*----------- PASSION --------------*/
+    section#passion {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 50px 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .capabilities {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    #passion p.header-text {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .capabilities div {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .capabilities div img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .capabilities div p {
+      font-size: 15px;
+      font-family: var(--narrow);
+      padding: 15px 0;
+    }
+
+    .capabilities h3 {
+      font-family: var(--josefin);
+      margin-top: 14px;
+    }
+    /*----------- PASSION --------------*/
+
+
+    /*----------- EXPERIENCE --------------*/
+    section#experience {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 50px 100px;
+    }
+
+    #experience p.header-text {
+        font-family: var(--josefin);
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #experience .section-intro {
+      font-family: var(--narrow);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .tech-text {
+      font-size: 16px;
+      font-family: var(--josefin);
+      margin-bottom: 15px;
+    }
+
+    .technologies .row img {
+    width: 60px;
+      height: 60px;
+    }
+    /*----------- EXPERIENCE --------------*/
+
+    section.my-resume {
+        width: 100%;
+        padding: 100px 50px;
+      }
+
+    .my-resume h3 {
+      font-size: 20px;
+    }
+
+
+    /*--------------- PROJECTS -------------------*/
+    section#projects {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 50px 70px;
+    }
+
+    #projects p.header-text {
+        font-family: var(--josefin);
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    #projects .container p:nth-child(2) {
+      font-family: var(--narrow);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    #projects .projects-grid .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .projects-grid .card {
+      margin-bottom: 30px;
+      height: 340px;
+      width: 300px;
+    }
+
+    .projects-grid .card p {
+      margin-bottom: 30px;
+    }
+    /*--------------- PROJECTS -------------------*/
+
+    /*---------------- SAY HELLO -----------------*/
+    section#email-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 100px 100px;
+        background-color: whitesmoke;
+    }
+
+    #email-me .fas {
+      font-size: 50px;
+      color: cyan;
+      margin-bottom: 20px;
+    }
+
+    #email-me h3 {
+      font-family: var(--josefin);
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    #email-me p {
+      font-family: sans-serif;
+      font-size: 15px;
+      margin-bottom: 25px;
+      font-weight: lighter;
+
+    }
+    /*-------------SAY HELLO --------------------*/
+
+    /*------------ FOOTER --------------------*/
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 60px 50px;
+        background-color: rgba(0,0,0,.9);
+    }
+
+    footer p {
+      font-size: 15px;
+      font-family: var(--josefin);
+      color: whitesmoke;
+    }
+
+    footer .fab {
+      color: whitesmoke;
+      font-size: 20px;
+      margin: 0 10px;
+      background-color: rgba(0,0,0,.6);
+      padding: 8px;
+    }
+
+    .social-media-icons {
+      margin-bottom: 20px;
+    }
+    /*------------------------ FOOTER ------------------------*/
+
+}
+
+
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.nav-close {
+    transform: translateX(100%);
+}
+
+.sticky {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 1s ease-in;
+  height: 10vh;
+}
+
+@keyframes linkfade {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.link-animate {
+    animation: linkfade .5s ease-in forwards .5s;
+}
+
+.cross .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.cross .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.cross .line2 {
+    opacity: 0;
+}
